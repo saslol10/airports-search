@@ -25,7 +25,7 @@ public class Search {
                 String[] arrRow = line.split(",");
 
                 if (numCol > arrRow.length || numCol <= 0) {
-                    System.out.println("Столбец вышел за пределы файла. Передел от 1 до " + arrRow.length);
+                    System.out.println("РЎС‚РѕР»Р±РµС† РІС‹С€РµР» Р·Р° РїСЂРµРґРµР»С‹ С„Р°Р№Р»Р°. РџРµСЂРµРґРµР» РѕС‚ 1 РґРѕ " + arrRow.length);
                     System.exit(-1);
                 }
 
@@ -39,7 +39,7 @@ public class Search {
     }
 
     public TreeMap<Integer, String> searchByCol(String prefix) {
-        TreeMap<Integer, String> resultOfSearch = new TreeMap<>(); //сортировка по умолчанию числа по возрастанию, буквы в алфавитном порядке
+        TreeMap<Integer, String> resultOfSearch = new TreeMap<>(); //СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ С‡РёСЃР»Р° РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ, Р±СѓРєРІС‹ РІ Р°Р»С„Р°РІРёС‚РЅРѕРј РїРѕСЂСЏРґРєРµ
         prefix = prefix.toLowerCase();
         for (String key : this.storage.keySet()) {
             if (key.toLowerCase(Locale.ROOT).startsWith(prefix)) {

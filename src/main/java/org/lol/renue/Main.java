@@ -10,11 +10,11 @@ public class Main {
         if (args.length == 1) {
 
             int numCol = Integer.parseInt(args[0]);
-            System.out.println("Поиск по столбцу: " + numCol + ".");
+            System.out.println("РџРѕРёСЃРє РїРѕ СЃС‚РѕР»Р±С†Сѓ: " + numCol + ".");
             Search s = new Search(numCol);
             boolean flag = true;
             while (flag) {
-                System.out.println("Введите строку:");
+                System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ:");
 
                 Scanner console = new Scanner(System.in);
                 String line = console.nextLine();
@@ -24,21 +24,21 @@ public class Main {
                 } else {
 
                     long startTime = System.currentTimeMillis();
-                    TreeMap<Integer, String> resultOfSearch = s.searchByCol(line); //Поиск
+                    TreeMap<Integer, String> resultOfSearch = s.searchByCol(line); //РџРѕРёСЃРє
                     long endTime = System.currentTimeMillis();
 
-                    Map<String, String> result = s.output(resultOfSearch); //Вывод строк
+                    Map<String, String> result = s.output(resultOfSearch); //Р’С‹РІРѕРґ СЃС‚СЂРѕРє
                     if (result.size() > 0) {
                         for (String key : result.keySet()) {
                             System.out.println("\"" + key + "\" [" + result.get(key) + "]");
                         }
                     }
-                    System.out.println("Количество найденных строк: " + result.size() + ", затраченное время на поиск: " + (endTime - startTime) + " мс");
+                    System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РЅР°Р№РґРµРЅРЅС‹С… СЃС‚СЂРѕРє: " + result.size() + ", Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ РІСЂРµРјСЏ РЅР° РїРѕРёСЃРє: " + (endTime - startTime) + " РјСЃ");
                 }
             }
         } else {
-            System.out.println("Некорректный ввод параметров. ");
+            System.out.println("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ. ");
         }
-        System.out.println("Программа завершена.");
+        System.out.println("РџСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°.");
     }
 }
